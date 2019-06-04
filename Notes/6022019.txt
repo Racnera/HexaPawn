@@ -1,0 +1,37 @@
+6/02/2019 HexaPawn Work and notes
+
+- make circles over the spots of 1 and -1, will work with the array 'board' probably a function of ((100y+5),(100x+5))
+-pawn being drawn, havent set it to the right spot yet.
+
+-updateBoard() now requires a canvas (is now updateBoard(Canvas c))
+-equation for pawn placement is (100 * (x-1) + 5) and (100 * (y) + 5)
+
+-alright, here's the breakdown on the pawn stuff
+	- the canvas requirement in updateBoard() was doing nothing so i removed it.
+	- made a NEW canvas on top of gameBoard (the chess squares/buttons) that is exclusively for the pieces called canPawn
+	- now everytime a move is made, canPawn is cleared of all elements, and then uses the int[,] board to determine where the pieces are
+	- it then redraws the pieces in their new spots
+
+ So now it works exactly how i want it to.
+ next on the list is Scoring, and reseting the game.
+
+- if a player clicks on an invalid square, the square is still highlighted
+
+- fixed above, if piece selected came out false, the highlight is cleared, since the game runs so fast, it doesnt ever seem highlighted
+- re ordered functions in the button so the highlight ismade right away, and then cleared if pieceSelected returns false
+
+i still have not done scoring.
+
+- i did scoring, now you win if you make it to the other side, 
+ -i forgot about stalemates and unfortunately, dont have an idea to fix it yet
+- if all of the black pawns are stale, then all of the white ones are too,
+- stalemate check works.
+- if all of one colour's pawns are killed, the game SHOULD end, but I haven't tested it yet.
+- game logic is done and working for multiplayer, now I build AI using the game as a base
+- I'm thinking the way to do it, is switches and randoms. the computer will forget all that it 
+  has learned when the game closes, but maybe that is for the better; wouldn't want a computer that is never beatable
+
+- The idea for the AI is that the human will win the first bunch of rounds, but then the computer will figure out what moves
+  are making it lose, and when put into the same scenario, it wont make the same losing move it did previously.
+  
+- the cases will probably be in variations of the board, so int[,]{ {},{},{} }

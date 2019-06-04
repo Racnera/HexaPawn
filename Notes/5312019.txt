@@ -1,0 +1,18 @@
+5/31/2019 HexaPawn Notes and documenting
+
+-working out numbers logic, have a board set up, working on moving pieces.
+
+-created an update board method that will run after every move, 
+updating the location of the pieces, and checking if theres a winning move made
+
+-I MOVED A PIECE, only forward to a blank tile, but it worked.
+
+- created checkMove() method; checks if your selected piece can be moved to the space selected
+
+- checkMove() allowed movement diagonally when it was an illegal move, that's since been fixed.
+
+-setting the map of the board (A,B,C x 1,2,3)
+
+- I BROKE EVERYTHING WHILE TRYING TO IMPLEMENT MY CODE FOR ALL MOVES
+
+-will continue tomorrow or later tonight			12:54PM

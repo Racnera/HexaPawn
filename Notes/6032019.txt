@@ -1,0 +1,39 @@
+6/03/2019 - HexaPawn changes
+
+- today is a summary of the things i did because i didnt take notes as i built the game.
+
+the game wasworking this morning, but it was a tad annoying to play.
+I previously had the pieces bieng drawn over the buttons, which looked correct, the only issue was that you cannot click 
+through the ellipses/pieces, so i had the wonderful idea of setting the piece directly into the button, that way
+it can be clicked regardless of where on the button you click.
+
+this posed an troublesome, as I could not think of an efficiant way to build it this way. An idea was presented, 
+that instead of using the grid layout of my button, I create a wrap panel, and use loops to generate buttons with pawns
+in their initial position. the checkMove and updateBoard methods would have to be at least partially changed to adapt
+to the changes with the buttons. Though a grid system similar to the one currently implemented could work, 
+I have yet to build one, and will get on that right after this summary.
+
+Currently implemented is a brute-force method of putting the pawns inside of buttons, through checking each individual
+piece in board[,] and drawing/removing pieces from them.
+
+
+					~~~~ Wrap Panel process notes ~~~~
+
+
+- wrap panel has board[,] in it, the buttons in the wrap panel have names as accoring to their creation in a loop, 
+which just so happens to be the exact pattern of the array. 
+-need to build a new check move method, which shouldn't be
+hard since it will be almost exactly the same as my previous methods, just with differnet var names.
+
+- board is now drawn correctly, squares and pawns are correct colour when drawn on startup, 
+- can successfully check if the piece you are trying to move is yours
+
+- can move all pawns, can win by getting to the other end, or by removing all enemy pieces, can stalemate
+- resets board when game ends. 
+
+- had a funny issue where the tile colour was being changed at the wrong time, if you tried to select a square
+  but it was empty or occupied, it would colour that tile white. 
+  if you selected a BLACK tile before, (so that slect has a black background), you get the same effect, but 
+  squares you click afterwards change black instead of white.
+
+need to add score display, but otherwise it's done, and is half the size of the original.

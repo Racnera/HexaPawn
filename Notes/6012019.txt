@@ -1,0 +1,29 @@
+6/01/2019 hexapawn testing and notes
+
+ -building UML diagram, forgot to do that before hand
+
+- increased code efficiancy in methods, less 'if' statements, 
+removed most of them out of methods, have not moved them out of buttons
+
+- Turn counter works properly, all pieces can move to blank tiles
+
+-next build is capturing pieces in check move method. 
+	plan is to check diag squares for enemy piece, 
+	then write selected piece in enemy piece's place if one of them is selected
+
+	might make dispatch timer to update graphics later, we'll see.
+
+- had to turn grid from 3x3 into 5x3 (X x Y) for checking diag, 
+ maybe I didnt NEED to do it this way, but it was the first I thought of and it works.
+
+- made  turnSwitch(), switches between black and white's turn. 
+
+-Capturing pieces works, want to condense the code for it to a single if statement, 
+currently have it in 2, 1 for each colour
+
+- condensed to 1 statement, used (turn*-1) to determine if enemy piece is in the square you want to move to.
+
+- now i haven't reached it yet, but i need something to redraw the board when the game is over, 
+i made a method, it probably didnt need a method. i made one anyways.
+
+-Board Read ability increased
